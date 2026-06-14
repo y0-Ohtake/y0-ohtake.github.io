@@ -1,0 +1,63 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage{microtype}
+\usepackage[margin=20truemm]{geometry}
+\usepackage{bm}
+\usepackage{tensor}
+\usepackage{amsmath}
+\title{Test note}
+\author{}
+\date{\today}
+\begin{document}
+\maketitle
+\begin{abstract}
+    This is a test note for embedding a pdf to my homepage.
+\end{abstract}
+\section{Standard cosmology}
+Assuming our universe is a homogeneous and isotropic spacetime, the metric tensor is given by 
+\begin{equation}
+    ds^2 = g_{\mu \nu} dx^\mu dx^\nu = -dt^2 + a^2\left( t \right) \left( dx^2 + dy^2 + dz^2 \right),
+\end{equation}
+or explicitly
+\begin{equation}
+    g_{\mu \nu} = 
+    \begin{pmatrix}
+        -1 & 0 & 0 & 0 \\
+        0 & a^2\left( t \right) & 0 & 0 \\
+        0 & 0 & a^2\left( t \right) & 0\\
+        0 & 0 & 0 & a^2\left( t \right)
+    \end{pmatrix},
+\end{equation}
+where $ds^2$ is line element, $x,y,z$ are flat-spatial coordinates, $t$ is cosmic time, and $a$ is scale factor.
+$g_{\mu \nu}$ is called the Friedmann-Lemaître-Robertson-Walker (FLRW) metric.
+
+According to general relativity, the relation between spacetime geometry and the distribution of all components in our universe is 
+formulated by the Einstein equation
+\begin{equation}
+    G_{\mu \nu} = 8 \pi G T_{\mu \nu},
+\end{equation}
+where $G$ is the gravitational constant, $T_{\mu \nu}$ is energy momentum tensor, 
+and the Einstein tensor $G_{\mu \nu}$ is defined with Ricci tensor $R_{\mu \nu}$ and Ricci scalar $R$ by 
+\begin{equation}
+    G_{\mu \nu} = R_{\mu \nu} - \frac{1}{2}g_{\mu \nu} R.
+\end{equation}
+We consider the Einstein equation under the FLRW metric.
+When assuming that our universe is isotropic and homogeneous, 
+we can determine the energy momentum tensor explicitly,
+\begin{equation}
+    \tensor{T}{^\mu_\nu} = 
+    \begin{pmatrix}
+        - \rho & 0 & 0 & 0\\
+        0 & P & 0 & 0 \\
+        0 & 0 & P & 0 \\
+        0 & 0 & 0 & P
+    \end{pmatrix}
+\end{equation}
+where $\rho$ is the energy density of the universe and $P$ is the pressure.
+Substituting FLRW and the above $\tensor{T}{^\mu_\nu}$ to the Einstein equation, we get two equations, called Friedmann equations,
+\begin{equation}
+    \left( \frac{1}{a} \frac{d a}{dt} \right)^2 = \frac{8 \pi G}{3} \rho
+\end{equation}
+\begin{equation}
+    \frac{1}{a}\frac{d^2 a}{dt^2} = - \frac{4 \pi G}{3}\left( \rho + 3 P \right)
+\end{equation}
+\end{document}

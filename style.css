@@ -1,0 +1,273 @@
+@charset "UTF-8";
+
+/* ==========================================
+   Variables (パステル＆ゆるふわカラーの設定)
+========================================== */
+:root {
+    --text-main: #4a3f3f; /* ココア色を少しだけ濃く（引き締め） */
+    --text-muted: #706363; /* 説明文のブラウンも少し濃くして読みやすく */
+    --bg-page: #fff0f2; /* いちごミルクのような淡いパステルピンク */
+    --bg-card: #ffffff; /* コンテンツ背景はスッキリ白 */
+    --bg-sidebar: #fff9fa; /* サイドバーはさらに淡いピンクホワイト */
+    --primary: #f3a6b5; /* メインのさくらピンク */
+    --primary-hover: #ff8fa4; /* ホバー時の少し濃いピンク */
+    --accent: #d6556d; /* ベリーピンクを少しだけ濃く（赤み追加） */
+    --heading-bg: #ffe4e8; /* 見出しの背景用のふんわりピンク */
+    --shadow: 0 8px 24px rgba(243, 166, 181, 0.25); /* ピンクに馴染む柔らかい影 */
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* ぷにっとした動きのアニメーション */
+    --border-radius: 16px; /* 角丸を大きくして丸みを出します */
+}
+
+/* ==========================================
+   Base
+========================================== */
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+    color: var(--text-main);
+    background-color: var(--bg-page);
+    /* お持ちの「ヒラギノ丸ゴ」を最優先で指定しています */
+    font-family:
+        "Hiragino Maru Gothic ProN", "Hiragino Maru Gothic Pro",
+        "Helvetica Neue", Arial, sans-serif;
+}
+
+a {
+    color: var(--primary-hover);
+    text-decoration: none;
+    transition: var(--transition);
+    font-weight: bold;
+}
+
+a:hover {
+    color: var(--accent);
+    transform: translateY(-1px); /* ホバー時に少し上にぷかぷか浮く */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+    border-radius: var(--border-radius);
+}
+
+/* ==========================================
+   Layout (Flexbox)
+========================================== */
+#outer {
+    margin: 40px auto;
+    max-width: 1000px;
+}
+
+#content {
+    display: flex;
+    gap: 25px;
+    padding: 0 20px;
+}
+
+.inner {
+    flex: 1;
+    padding: 35px 40px;
+    background-color: var(--bg-card);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+aside,
+#sidenavi {
+    width: 240px;
+    padding: 25px;
+    color: var(--text-muted);
+    background-color: var(--bg-sidebar);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border: 2px solid #ffe4e8;
+}
+
+/* ==========================================
+   Header & Footer
+========================================== */
+header {
+    padding: 20px 20px 40px;
+    text-align: center;
+}
+
+.header-inner {
+    font-size: 14px;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+}
+
+h1 {
+    font-size: 32px;
+    margin: 0;
+    padding: 0;
+}
+
+h1 a {
+    color: var(--accent);
+}
+
+footer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 14px;
+    padding: 60px 0 40px;
+    margin-top: 40px;
+}
+
+/* ==========================================
+   Typography & Elements
+========================================== */
+h2 {
+    font-size: 22px;
+    margin: 1.5em 0 1em;
+    padding: 14px 20px;
+    background-color: var(--heading-bg);
+    color: var(--accent);
+    border-radius: 30px;
+    display: inline-block;
+    padding-right: 35px;
+}
+
+p {
+    margin: 1.2em 0;
+}
+
+.aka {
+    color: var(--accent);
+    background: linear-gradient(transparent 60%, #ffdde2 60%);
+    padding: 0 2px;
+}
+
+blockquote {
+    background-color: #fff9fa;
+    border: 2px dashed #f3a6b5;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: var(--border-radius);
+    color: var(--text-muted);
+}
+
+/* ==========================================
+   Navigation & Sidebar Elements
+========================================== */
+.left-title {
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: var(--accent);
+    border-bottom: 3px dotted var(--primary);
+    font-size: 18px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    padding: 6px 0;
+}
+
+#sidenavi a,
+.link a {
+    display: block;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    border: 1px solid #ffe4e8;
+    box-shadow: 0 2px 6px rgba(243, 166, 181, 0.1);
+    text-align: center;
+}
+
+#sidenavi a:hover,
+.link a:hover {
+    background-color: var(--primary);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* ==========================================
+   Note Cards (ノート一覧用のカードデザイン)
+========================================== */
+.note-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.note-card {
+    background-color: var(--bg-card);
+    padding: 20px 25px;
+    border-radius: var(--border-radius);
+    border: 2px solid #ffe4e8;
+    box-shadow: 0 4px 12px rgba(243, 166, 181, 0.1);
+    display: block;
+}
+
+.note-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(243, 166, 181, 0.3);
+    border-color: var(--primary);
+    text-decoration: none;
+}
+
+.note-date {
+    font-size: 13px;
+    color: var(--primary);
+    font-weight: bold;
+    margin-bottom: 5px;
+    letter-spacing: 0.05em;
+}
+
+.note-title {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    color: var(--accent);
+    font-weight: 900;
+    border-bottom: 2px dashed #ffe4e8;
+    padding-bottom: 8px;
+}
+
+.note-desc {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    padding-top: 4px;
+}
+
+/* ==========================================
+   Responsive (スマホ対応)
+========================================== */
+@media (max-width: 768px) {
+    #content {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .inner,
+    aside,
+    #sidenavi {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .inner {
+        padding: 25px 20px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+}
