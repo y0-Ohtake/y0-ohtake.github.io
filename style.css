@@ -291,3 +291,33 @@ li {
         font-size: 18px;
     }
 }
+/* ==========================================
+   Buttons (ボタンのデザイン)
+========================================== */
+.back-to-home {
+    text-align: center; /* ボタンを中央に配置 */
+    margin-top: 50px; /* 上のノート一覧との間にゆとりを持たせる */
+    margin-bottom: 20px;
+}
+
+.btn-home {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: var(--primary); /* さくらピンク */
+    color: #ffffff; /* 文字は白 */
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px; /* まん丸な形にする */
+    box-shadow: 0 4px 12px rgba(243, 166, 181, 0.4); /* ピンクの可愛い影 */
+    border: 2px solid transparent;
+}
+
+/* マウスを乗せたときのホバーアクション */
+.btn-home:hover {
+    background-color: #ffffff; /* 背景を白に反転 */
+    color: var(--primary-hover); /* 文字をピンクに */
+    border: 2px solid var(--primary-hover); /* ピンクの枠線をつける */
+    transform: translateY(-3px); /* ぷかっと上に浮く */
+    box-shadow: 0 8px 20px rgba(243, 166, 181, 0.3);
+    text-decoration: none;
+}
