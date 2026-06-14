@@ -242,6 +242,26 @@ li {
     padding-top: 4px;
 }
 
+.site-title {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    margin: 0;
+}
+
+.site-title a {
+    grid-column: 2;
+    text-decoration: none;
+}
+
+.site-logo {
+    grid-column: 3;
+    justify-self: start;
+    margin-left: 30px; /* 文字との隙間 */
+    height: 100px; /* 画像の高さ */
+    width: auto;
+}
+
 /* ==========================================
    Responsive (スマホ対応)
 ========================================== */
